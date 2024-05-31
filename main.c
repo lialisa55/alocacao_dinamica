@@ -46,6 +46,11 @@ void alocacaomatrizponteiro(){
         printf("\n");
     }
 
+    for(int i = 0; i < numA; i++){
+        free(matriz[i]);
+    }
+    free(matriz);
+
 }
 
 int main()
