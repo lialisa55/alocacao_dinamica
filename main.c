@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+
+void alocacaovetorponteiro(){
     int *vetor, num;
 
     scanf("%d", &num);
@@ -18,6 +18,41 @@ int main()
     }
 
     free(vetor);
+}
 
+void alocacaomatrizponteiro(){
+    int numA, numB;
+
+    scanf("%d %d", &numA, &numB);
+
+
+    int **matriz = (int **) malloc(numA * sizeof(int));
+
+
+    for (int i = 0; i < numA; i++){
+        matriz[i] = (int **) malloc(numB * sizeof(int));
+    }
+
+    for (int i = 0; i < numA; i++){
+            for (int j = 0; j < numB; j++){
+                scanf("%d", &matriz[i][j]);
+            }
+    }
+
+    for (int i = 0; i < numA; i++){
+        for (int j = 0; j < numB; j++){
+            printf("%d", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+}
+
+int main()
+{
+    alocacaovetorponteiro();
+    alocacaomatrizponteiro();
     return 0;
 }
+
+
